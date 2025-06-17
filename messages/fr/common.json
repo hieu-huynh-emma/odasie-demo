@@ -1,0 +1,220 @@
+{
+  "site": {
+    "name": "Mon Application",
+    "description": "Une application puissante pour vos besoins",
+    "keywords": "application, web, logiciel"
+  },
+  "global_settings": {
+    "label_language": "Langue",
+    "label_currency": "Devise"
+  },
+  "common": {
+    "at_a": "À un ",
+    "glance": "coup d'œil",
+    "filter": "Filtrer",
+    "destination": "Destination",
+    "experience": "Expérience",
+    "the_theme": "le thème",
+    "immersive": "IMMERSIF",
+    "experience_title": "EXPÉRIENCE",
+    "theme": "LE THÈME",
+    "in": "DANS",
+    "keyword": "Mot-clé",
+    "duration": "Durée",
+    "price": "Prix",
+    "address": "Adresse: {{address}}",
+    "keyword_placeholder": "Qu'avez-vous en tête ?",
+    "duration_placeholder": "Combien de temps ?",
+    "destination_placeholder": "Où aller ?",
+    "empty_reviews": "Il n'y a pas d'avis à afficher.",
+    "discover": "Découvrir",
+    "discover_country": "Découvrir {{article}} {{countryName}}",
+    "from_the": "De la",
+    "trip": "voyage",
+    "tours": "Circuits",
+    "tours_country": "Circuits {{preposition}} {{countryName}}",
+    "map": "Carte",
+    "reviews": "Avis",
+    "overview": "Aperçu",
+    "traveler": "Voyageur",
+    "areas": "RÉGIONS",
+    "you_might_like": "QUE VOUS POURRIEZ AIMER EN {{countryName}}",
+    "everything_should_know": "TOUT CE QUE VOUS DEVEZ SAVOIR",
+    "about": "À propos",
+    "about_us": "À propos de nous",
+    "you_may_also": "vous pouvez également",
+    "like": "aimer",
+    "faq": "FAQ",
+    "our_trip": "Notre voyage à",
+    "contact_us": "Contactez-nous",
+    "no_faq": "Aucune FAQ disponible",
+    "related_tours": "CIRCUITS ASSOCIÉS",
+    "day": "{{days}} jours",
+    "consult": "Consultez notre",
+    "insurance": "Assurance",
+    "total_reviews": "{{total}} avis",
+    "total_reviews_plural": "{{total}} avis",
+    "comments": "{{count}} commentaire",
+    "comments_plural": "{{count}} commentaires",
+    "by": "par {{name}}",
+    "average_rating": "Note moyenne",
+    "day_by_day": "Jour par jour",
+    "itinerary": "Itinéraire",
+    "more_question": "Vous avez d'autres questions ? Discutons avec {{name}}",
+    "plan_trip": "Planifier un voyage avec {{name}}",
+    "see_more": "Voir plus",
+    "trust_us": "Ils nous font confiance",
+    "guided_by": "Guidé par {{name}}",
+    "guided_tour": "Guidé vers",
+    "created_by": "Créé par {{name}}",
+    "from": "à partir de",
+    "all": "Tous",
+    "see_all_celebrations": "Voir toutes les célébrations",
+    "create_itinerary": "Créer votre itinéraire",
+    "login_to_odasie": "Se connecter à Odasie+",
+    "error_msg": "Veuillez prendre un moment pour vérifier les informations saisies dans ce formulaire, il semble qu'il y ait des erreurs.",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "more_page": "Plus de pages",
+    "await": "EN ATTENTE",
+    "for_you_discover": "POUR VOUS DÉCOUVRIR",
+    "all_slug": "Tout {{slug}}",
+    "ideas": "IDÉES",
+    "show_all": "Tout afficher",
+    "show_less": "Afficher moins",
+    "search": "Rechercher...",
+    "travel_idea": "Idées de voyage en {{country}}",
+    "learn_more": "En savoir plus",
+    "our_passion": "Nous vivons de notre passion et nous connaissons les destinations que nous proposons",
+    "meals": "Repas",
+    "or": "ou",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer",
+      "send_message": "Envoyer un message",
+      "required": "Requis",
+      "invalid_email": "Email invalide",
+      "min_charaters": "Doit comporter au moins {{min}} caractères !",
+      "name_required": "Le nom est requis",
+      "phone_requred": "Le téléphone est requis",
+      "email_required": "L'email est requis",
+      "message_required": "Le message est requis",
+      "your_name": "Votre nom",
+      "your_phone": "Votre téléphone",
+      "your_email_address": "Votre adresse email",
+      "your_message": "Votre message pour nous",
+      "title": "Nous y sommes presque ! Connectez-vous avec nous, et l'un de nos spécialistes du voyage vous contactera sous peu."
+    }
+  },
+  "blog": {
+    "published": "PUBLIÉ",
+    "comments": "{{count}} commentaire",
+    "comments_plural": "{{count}} commentaires",
+    "by": "par {{name}}",
+    "empty_blog": "Il n'y a pas d'articles de blog",
+    "see_all": "Voir tous les articles",
+    "you_may_also": "VOUS POURRIEZ AUSSI ",
+    "like": "AIMER",
+    "related_tours": "CIRCUITS ASSOCIÉS"
+  },
+  "destination": {
+    "immersive_title": "IMMERSIF EN {{countryName}}",
+    "immersive_text": "Voir l'album complet",
+    "see_all_tours": "Voir tous les circuits en {{countryName}}",
+    "season_to_go": "Quelle est la meilleure saison pour y aller ?",
+    "video_by": "Voici une vidéo sur {{countryName}} par ",
+    "festivals_celebrations": "Festivals et célébrations en ",
+    "top_experience": "Top expérience en ",
+    "show_all_reviews": "Afficher tous les avis",
+    "title": "Nous devons savoir où vous voulez aller!",
+    "description": "Veuillez choisir une destination pour rechercher des tours.",
+    "capital": "capitale",
+    "time_difference": "différence horaire",
+    "time_difference_period_summer": "Avril à Octobre",
+    "time_difference_period_winter": "Novembre à Mars",
+    "summer": " en été",
+    "winter": " en hiver",
+    "religion": "religion",
+    "average_flight_price": "prix moyen du vol",
+    "average_meal_price": "prix moyen d'un repas",
+    "hello_saying": "bonjour",
+    "thank_you_saying": "merci"
+  },
+  "discovery": {
+    "ask_to_take_there": "Demandez-nous de vous y emmener"
+  },
+  "experience": {
+    "see_all_tours": "Voir tous les circuits"
+  },
+  "tour": {
+    "date_price": "Date et prix",
+    "suggest_duration": "Durée suggérée",
+    "price_from": "Prix par adulte à partir de",
+    "price_include": "Ce prix comprend :",
+    "price_not_include": "Ce prix ne comprend pas :",
+    "get_travel_idea": "A Partir De",
+    "location": "{{duration}} jours / {{location}} lieux",
+    "trip_by": "Voyage proposé par",
+    "personalized": "Personnalisez avec {{name}}",
+    "ask_question": "Une question ? Consultez notre",
+    "general_conditions": "Conditions générales",
+    "request_trip_qoute": "Demander un devis pour ce voyage",
+    "accommodations": "Hébergements proposés pendant votre séjour",
+    "total_tours": "{{total}} circuit",
+    "total_tours_plural": "{{total}} circuits",
+    "travel_ideas": "IDÉES DE VOYAGE EN",
+    "see_all_tours": "Voir tous les circuits",
+    "see_adventure_ideas": "Voir les idées d'aventure",
+    "discover_more": "{{name}} IDÉES EN ATTENTE DE VOUS DÉCOUVRIR"
+  },
+  "city": {
+    "season": "Quelle SAISON pour aller à {{name}} ?"
+  },
+  "star": {
+    "rating_1": "Très mauvais",
+    "rating_2": "Mauvais",
+    "rating_3": "Moyen",
+    "rating_4": "Bon",
+    "rating_5": "Fabuleux"
+  },
+  "message": {
+    "error": {
+      "title": "Oups ! Quelque chose s'est mal passé.",
+      "description": "Une erreur est survenue lors de l'envoi de votre message."
+    },
+    "success": {
+      "title": "Succès !",
+      "description": "Votre message a été envoyé avec succès."
+    }
+  },
+  "create_your_itinerary": {
+    "title": "Créer votre itinéraire",
+    "thank_you": {
+      "title": "Merci de nous avoir contactés !",
+      "instruction": "Notre spécialiste de voyage vous enverra un e-mail de confirmation sous peu. Veuillez surveiller votre boîte de réception. En attendant, n'hésitez pas à en savoir plus."
+    }
+  },
+  "enum": {
+    "duration": {
+      "less_than_5_days": "Moins de 5 jours",
+      "5_to_10_days": "5 à 10 jours",
+      "10_to_15_days": "10 à 15 jours",
+      "more_than_15_days": "Plus de 15 jours"
+    },
+    "price_range": {
+      "less_than_1000": "Moins de 1000 EUR",
+      "1000_to_1500": "1000 à 1500 EUR",
+      "1500_to_2000": "1500 à 2000 EUR",
+      "2000_to_2500": "2000 à 2500 EUR",
+      "more_than_2500": "Plus de 2500 EUR"
+    }
+  },
+  "recaptcha": {
+    "error": {
+      "title": "Oups ! Quelque chose s'est mal passé.",
+      "description": "Une erreur est survenue lors de l'envoi de votre message."
+    }
+  }
+}

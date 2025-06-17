@@ -1,0 +1,11 @@
+pipelines:
+  branches:
+    main: # Make sure this matches your repo's main branch name
+      - step:
+          name: Deploy to Production
+          deployment: production
+          script:
+            - ls -la ~/.ssh
+            - echo "Deploying to production server..."
+            - ssh -v ubuntu@43.208.243.192 " cd ~ && bash ./prod.sh || { echo
+              'Deployment failed! Keeping the current version.'; exit 1; } "

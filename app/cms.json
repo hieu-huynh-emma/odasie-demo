@@ -1,0 +1,17 @@
+{
+  "data": {
+    "id": 929,
+    "documentId": "bebn7rn3qb2b7jvwdzuglfnz",
+    "url": "/",
+    "title": "Homepage",
+    "blocks": [
+      {
+        "__component": "section.tour-section",
+        "id": 220,
+        "bgColor": null,
+        "callToAction": null
+      }
+    ]
+  },
+  "meta": {}
+}

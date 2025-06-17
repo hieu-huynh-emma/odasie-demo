@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* globals.css */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Custom styles for small screens */
+@media (max-width: 430px) {
+  .text-smaller-xs {
+    font-size: 0.75rem !important; /* 12px - reduced by ~2px */
+  }
+
+  .text-smaller-xl {
+    font-size: 1.125rem !important; /* 18px - reduced from xl */
+  }
+
+  .text-smaller-3xl {
+    font-size: 1.5rem !important; /* 24px - reduced from 3xl */
+  }
+
+  .small-text-mobile {
+    h4 {
+      font-size: 0.75rem !important;
+    }
+    p {
+      span {
+        font-size: 0.75rem !important;
+      }
+    }
+  }
+  .typo-5xl-bold {
+    font-size: 2rem !important;
+  }
+
+  .typo-lg-regular {
+    font-size: 1rem !important;
+  }
+
+  .typo-5xl-semibold {
+    font-size: 1rem !important;
+  }
+
+  .typo-5xl-medium {
+    font-size: 1rem !important;
+  }
+}
+
+.ck-content blockquote {
+  position: relative;
+  margin: 2em 0;
+  border: none !important;
+  background: #fff;
+  box-shadow: 0 8px 16px -8px #eee;
+}
+.ck-content blockquote::before {
+  border-left: none !important;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #f7c04a;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* When mobile menu is open */
+body.scrollbar-hide {
+  /* Prevent bounce effect on iOS */
+  position: fixed;
+  width: 100%;
+  /* Ensure this doesn't cause a jump */
+  top: 0;
+  left: 0;
+}
+
+.slider-full {
+  button:first-child {
+    left: 2% !important;
+    background-color: rgba(0, 0, 0, 50%);
+    width: 48px;
+    height: 48px;
+    svg {
+      stroke: #fff;
+    }
+  }
+  button:last-child {
+    right: 2% !important;
+    background-color: rgba(0, 0, 0, 50%);
+    width: 48px;
+    height: 48px;
+    svg {
+      stroke: #fff;
+    }
+  }
+}

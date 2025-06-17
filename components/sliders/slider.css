@@ -1,0 +1,29 @@
+.slick-dots {
+  position: absolute;
+  bottom: 36px;
+}
+
+.slick-dots li {
+  margin: 0 0px;
+}
+.slick-dots li button:before {
+  color: rgba(152, 162, 179, 1);
+  transition: color 0.3s ease-in-out;
+  opacity: 1;
+}
+.slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+}
+.slick-slider {
+  position: relative;
+}
+
+/* allow the overflow-visible on the wrapper to actually show */
+.slider-with-arrow .slick-list {
+  overflow: visible !important;
+}

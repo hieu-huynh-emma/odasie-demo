@@ -1,0 +1,204 @@
+{
+  "site": {
+    "name": "[DE] My Application",
+    "description": "[DE] A powerful application for your needs",
+    "keywords": "[DE] app, web, software"
+  },
+  "global_settings": {
+    "label_language": "Language",
+    "label_currency": "Currency"
+  },
+  "common": {
+    "at_a": "À un ",
+    "glance": "coup d'œil",
+    "filter": "Filtrer",
+    "destination": "Destination",
+    "experience": "Expérience",
+    "the_theme": "le thème",
+    "immersive": "IMMERSIF",
+    "in": "EN",
+    "keyword": "Mot-clé",
+    "duration": "Durée",
+    "price": "Prix",
+    "keyword_placeholder": "Qu'avez-vous en tête ?",
+    "duration_placeholder": "Combien de temps ?",
+    "destination_placeholder": "Où aller ?",
+    "empty_reviews": "Il n'y a pas d'avis à afficher.",
+    "discover": "Découvrir",
+    "discover_country": "Découvrir {{countryName}}",
+    "from_the": "Vom",
+    "trip": "reise",
+    "tours": "Circuits",
+    "tours_country": "Circuits en {{countryName}}",
+    "map": "Carte",
+    "reviews": "Avis",
+    "overview": "Aperçu",
+    "traveler": "Voyageur",
+    "areas": "RÉGIONS",
+    "you_might_like": "VOUS POURRIEZ AIMER EN {{countryName}}",
+    "everything_should_know": "TOUT CE QUE VOUS DEVEZ SAVOIR",
+    "about": "À propos",
+    "about_us": "À propos de nous",
+    "you_may_also": "vous pourriez aussi",
+    "like": "aimer",
+    "faq": "FAQ",
+    "our_trip": "Unser Trip nach",
+    "contact_us": "Kontaktiere uns",
+    "no_faq": "Aucune FAQ disponible",
+    "related_tours": "CIRCUITS ASSOCIÉS",
+    "day": "{{days}} jours",
+    "consult": "Consultez notre",
+    "insurance": "Assurance",
+    "total_reviews": "{{total}} avis",
+    "total_reviews_plural": "{{total}} avis",
+    "comments": "{{count}} commentaires",
+    "comments_plural": "{{count}} commentaires",
+    "by": "par {{name}}",
+    "average_rating": "Note moyenne",
+    "day_by_day": "Jour par jour",
+    "itinerary": "Itinéraire",
+    "more_question": "Vous avez d'autres questions ? Discutons-en avec {{name}}",
+    "see_more": "Voir plus",
+    "trust_us": "Ils nous font confiance",
+    "guided_by": "Guidé par {{name}}",
+    "guided_tour": "Guidé vers",
+    "created_by": "Créé par {{name}}",
+    "from": "à partir de",
+    "all": "Tous",
+    "see_all_celebrations": "Voir toutes les célébrations",
+    "create_itinerary": "Créez votre itinéraire",
+    "login_to_odasie": "Connectez-vous à Odasie+",
+    "error_msg": "Veuillez vérifier les informations saisies dans ce formulaire, il semble y avoir des erreurs.",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "more_page": "Weitere Seite",
+    "travel_idea": "Reiseideen in {{country}}",
+    "learn_more": "Mehr erfahren",
+    "our_passion": "Wir leben von unserer Leidenschaft und wir kennen die Ziele, die wir anbieten",
+    "meals": "Essen",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer",
+      "send_message": "Send Message",
+      "required": "Requis",
+      "invalid_email": "Email invalide",
+      "min_charaters": "Doit contenir au moins {{min}} caractères !",
+      "name_required": "Le nom est requis",
+      "phone_requred": "Le téléphone est requis",
+      "email_required": "L'email est requis",
+      "message_required": "Le message est requis",
+      "your_name": "Votre nom",
+      "your_phone": "Votre téléphone",
+      "your_email_address": "Votre adresse email",
+      "your_message": "Votre message pour nous",
+      "title": "On y est presque ! Contactez-nous, et l’un de nos spécialistes voyages vous répondra très bientôt."
+    }
+  },
+  "blog": {
+    "published": "PUBLIÉ",
+    "comments": "{{count}} commentaires",
+    "comments_plural": "{{count}} commentaires",
+    "by": "par {{name}}",
+    "empty_blog": "Aucun article de blog disponible",
+    "see_all": "Voir tous les articles",
+    "you_may_also": "VOUS POURRIEZ AUSSI",
+    "like": "AIMER",
+    "related_tours": "CIRCUITS ASSOCIÉS"
+  },
+  "destination": {
+    "immersive_title": "IMMERSIF EN THAÏLANDE",
+    "immersive_text": "Voir l'album complet",
+    "see_all_tours": "Voir tous les circuits en {{countryName}}",
+    "season_to_go": "Quelle SAISON pour aller en {{countryName}} ?",
+    "video_by": "Voici une vidéo sur {{countryName}} par",
+    "festivals_celebrations": "Festivals et Célébrations en",
+    "top_experience": "Meilleures expériences en",
+    "show_all_reviews": "Voir tous les avis",
+    "title": "Veuillez sélectionner une destination",
+    "description": "Vous devez sélectionner une destination pour rechercher des circuits.",
+    "capital": "capital",
+    "time_difference": "time difference",
+    "time_difference_period_summer": "Avril à Octobre",
+    "time_difference_period_winter": "Novembre à Mars",
+    "summer": " en été",
+    "winter": " en hiver",
+    "religion": "religion",
+    "average_flight_price": "average flight price",
+    "average_meal_price": "average meal price",
+    "hello_saying": "bonjour",
+    "thank_you_saying": "merci"
+  },
+  "discovery": {
+    "ask_to_take_there": "Demandez-nous de vous y emmener"
+  },
+  "experience": {
+    "see_all_tours": "Voir tous les circuits"
+  },
+  "tour": {
+    "date_price": "Dates et Prix",
+    "suggest_duration": "Durée suggérée",
+    "price_from": "Prix par adulte à partir de",
+    "price_include": "Ce prix inclut :",
+    "price_not_include": "Ce prix n'inclut pas :",
+    "get_travel_idea": "Obtenez cette idée de voyage depuis",
+    "location": "{{duration}} jours / {{location}} lieux",
+    "trip_by": "Voyage proposé par",
+    "personalized": "Personnalisez avec {{name}}",
+    "ask_question": "Une question ? Consultez notre FAQ ou nos conditions générales",
+    "request_trip_qoute": "Demander un devis pour ce voyage",
+    "accommodations": "Hébergements proposés pendant votre séjour",
+    "total_tours": "{{total}} Circuits",
+    "total_tours_plural": "{{total}} Circuits",
+    "travel_ideas": "REISEIDEEN IN",
+    "see_all_tours": "Voir tous les circuits",
+    "see_adventure_ideas": "Voir les idées d'aventure",
+    "discover_more": "{{name}} IDÉES EN ATTENTE DE VOUS DÉCOUVRIR"
+  },
+  "star": {
+    "rating_1": "Sehr schlecht",
+    "rating_2": "Schlecht",
+    "rating_3": "Durchschnittlich",
+    "rating_4": "Gut",
+    "rating_5": "Sehr gut"
+  },
+  "message": {
+    "error": {
+      "title": "Oups ! Une erreur est survenue.",
+      "description": "Une erreur s’est produite lors de l’envoi de votre message."
+    },
+    "success": {
+      "title": "Succès !",
+      "description": "Votre message a été envoyé avec succès."
+    }
+  },
+  "create_your_itinerary": {
+    "title": "Créez votre itinéraire",
+    "thank_you": {
+      "title": "Vielen Dank für das Ausfüllen der Informationen.",
+      "instruction": "Unser Reisespezialist wird Ihnen in Kürze eine Bestätigungs-E-Mail senden. Bitte behalten Sie Ihren Posteingang im Auge. In der Zwischenzeit können Sie gerne mehr erfahren."
+    }
+  },
+  "enum": {
+    "duration": {
+      "less_than_5_days": "Weniger als 5 Tage",
+      "5_to_10_days": "5 bis 10 Tage",
+      "10_to_15_days": "10 bis 15 Tage",
+      "more_than_15_days": "Mehr als 15 Tage"
+    },
+    "price_range": {
+      "less_than_1000": "Weniger als 1000 EUR",
+      "1000_to_1500": "1000 bis 1500 EUR",
+      "1500_to_2000": "1500 bis 2000 EUR",
+      "2000_to_2500": "2000 bis 2500 EUR",
+      "more_than_2500": "Mehr als 2500 EUR"
+    }
+  },
+  "recaptcha": {
+    "error": {
+      "title": "Oups ! Quelque chose s'est mal passé.",
+      "description": "Une erreur est survenue lors de l'envoi de votre message."
+    }
+  }
+}

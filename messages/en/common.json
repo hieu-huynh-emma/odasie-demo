@@ -1,0 +1,220 @@
+{
+  "site": {
+    "name": "My Application",
+    "description": "A powerful application for your needs",
+    "keywords": "app, web, software"
+  },
+  "global_settings": {
+    "label_language": "Language",
+    "label_currency": "Currency"
+  },
+  "common": {
+    "at_a": "{{name}} at a",
+    "glance": "glance",
+    "filter": "Filter",
+    "destination": "Destination",
+    "experience": "Experience",
+    "the_theme": "the theme",
+    "immersive": "IMMERSIVE ",
+    "experience_title": "EXPERIENCE ",
+    "theme": "THE THEME",
+    "in": "IN",
+    "keyword": "Keyword",
+    "duration": "Duration",
+    "price": "Price",
+    "address": "Address: {{address}}",
+    "keyword_placeholder": "What's on your mind?",
+    "duration_placeholder": "How long?",
+    "destination_placeholder": "Where to?",
+    "empty_reviews": "There are no reviews to display.",
+    "discover": "Discover",
+    "discover_country": "Discover {{countryName}}",
+    "from_the": "From the",
+    "trip": "trip",
+    "tours": "Tours",
+    "tours_country": "Tours in {{countryName}}",
+    "map": "Map",
+    "reviews": "Reviews",
+    "overview": "Overview",
+    "traveler": "Traveler ",
+    "areas": "AREAS ",
+    "you_might_like": "YOU MIGHT LIKE IN {{countryName}}",
+    "everything_should_know": "EVERYTHING YOU SHOULD KNOW ",
+    "about": "About ",
+    "about_us": "About us",
+    "you_may_also": "you may also",
+    "like": "like ",
+    "faq": "FAQ",
+    "our_trip": "Our trip to",
+    "contact_us": "Contact us",
+    "no_faq": "No FAQs available",
+    "related_tours": "RELATED TOURS",
+    "day": "{{days}} days",
+    "consult": "Consult our ",
+    "insurance": "Insurance",
+    "total_reviews": "{{total}} review",
+    "total_reviews_plural": "{{total}} reviews",
+    "comments": "{{count}} comment",
+    "comments_plural": "{{count}} comments",
+    "by": "by {{name}}",
+    "average_rating": "Average Rating",
+    "day_by_day": "Day by Day",
+    "itinerary": "Itinerary",
+    "more_question": "Have more question? Let's discuss with {{name}}",
+    "plan_trip": " Plan a trip with {{name}}",
+    "see_more": "See more",
+    "trust_us": "They trust us",
+    "guided_by": "Guided by {{name}}",
+    "guided_tour": "Guided to going to",
+    "created_by": "Created by {{name}}",
+    "from": "from",
+    "all": "All",
+    "see_all_celebrations": "See all Celebrations",
+    "create_itinerary": "Create your Itinerary",
+    "login_to_odasie": "Login to Odasie+",
+    "error_msg": " Please take a minute to check the information entered in this form, it looks like there are some errors.",
+    "previous": "Previous",
+    "next": "Next",
+    "more_page": "More page",
+    "await": " AWAIT",
+    "for_you_discover": "FOR YOU TO DISCOVER",
+    "all_slug": "All {{slug}}",
+    "ideas": " IDEAS",
+    "show_all": "Show all",
+    "show_less": "Show less",
+    "search": "Search...",
+    "travel_idea": "Travel Ideas in {{country}}",
+    "learn_more": "Learn more",
+    "our_passion": "We live from our passion and we know the destinations we offer",
+    "meals": "Meals",
+    "or": "or",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Submit",
+      "send_message": "Send Message",
+      "required": "Required",
+      "invalid_email": "Invalid email",
+      "min_charaters": "Must be at least {{min}} characters!",
+      "name_required": "Name is required",
+      "phone_requred": "Phone is required",
+      "email_required": "Email is required",
+      "message_required": "Message is required",
+      "your_name": "Your name",
+      "your_phone": "Your phone",
+      "your_email_address": "Your email address",
+      "your_message": "Your message for us",
+      "title": "We're almost there! Connect with us, and one of our travel specialists will reach out to you shortly."
+    }
+  },
+  "blog": {
+    "published": "PUBLISHED",
+    "comments": "{{count}} comment",
+    "comments_plural": "{{count}} comments",
+    "by": "by {{name}}",
+    "empty_blog": "There is no blog articles",
+    "see_all": "See All Articles",
+    "you_may_also": "YOU MAY ALSO",
+    "like": "LIKE",
+    "related_tours": "RELATED TOURS"
+  },
+  "destination": {
+    "immersive_title": "IMMERSIVE IN {{countryName}}",
+    "immersive_text": "See Full Album",
+    "see_all_tours": "See All Tours in {{countryName}}",
+    "season_to_go": "What SEASON to go to {{countryName}}?",
+    "video_by": "Here's a video about {{countryName}} by ",
+    "festivals_celebrations": "Festivals and Celebrations in ",
+    "top_experience": "Top Experience in ",
+    "show_all_reviews": "Show all Reviews",
+    "title": "We need to know where you want to go!",
+    "description": "Please select a destination to search for tours.",
+    "capital": "capital",
+    "time_difference": "time difference",
+    "time_difference_period_summer": "April to October",
+    "time_difference_period_winter": "November to March",
+    "summer": "in summer",
+    "winter": "in winter",
+    "religion": "religion",
+    "average_flight_price": "average flight price",
+    "average_meal_price": "average meal price",
+    "hello_saying": "hello",
+    "thank_you_saying": "thank you"
+  },
+  "discovery": {
+    "ask_to_take_there": "Ask us to take you there"
+  },
+  "experience": {
+    "see_all_tours": "See All Tours"
+  },
+  "tour": {
+    "date_price": "Date And Price",
+    "suggest_duration": "Suggested Duration",
+    "price_from": "Price per adult starting from",
+    "price_include": "This price includes:",
+    "price_not_include": "This price does not include:",
+    "get_travel_idea": "Starting From",
+    "location": "{{duration}} days / {{location}} locations",
+    "trip_by": "Trip proposed by",
+    "personalized": "Get personalized with {{name}}",
+    "ask_question": "A question? Consult our",
+    "general_conditions": "General Conditions",
+    "request_trip_qoute": "Request a Quote for this Trip",
+    "accommodations": "Accommodations offered during your stay",
+    "total_tours": "{{total}} Tour",
+    "total_tours_plural": "{{total}} Tours",
+    "travel_ideas": "TRAVEL IDEAS IN",
+    "see_all_tours": "See All Tours",
+    "see_adventure_ideas": "See Adventure Ideas",
+    "discover_more": "{{name}} IDEAS WAITING FOR YOU TO DISCOVER"
+  },
+  "city": {
+    "season": "What SEASON to go to {{name}}?"
+  },
+  "star": {
+    "rating_1": "Very Poor",
+    "rating_2": "Poor",
+    "rating_3": "Average",
+    "rating_4": "Good",
+    "rating_5": "Fabulous"
+  },
+  "message": {
+    "error": {
+      "title": "Uh oh! Something went wrong.",
+      "description": "An error occurred while sending your message."
+    },
+    "success": {
+      "title": "Success!",
+      "description": "Your message has been sent successfully."
+    }
+  },
+  "create_your_itinerary": {
+    "title": "Create your Itinerary",
+    "thank_you": {
+      "title": "Thank you for filling out the information",
+      "instruction": "Our travel specialist will send you a confirmation email shortly. Please keep an eye on your inbox. In the meantime, feel free to learn more"
+    }
+  },
+  "enum": {
+    "duration": {
+      "less_than_5_days": "Less than 5 days",
+      "5_to_10_days": "5 to 10 days",
+      "10_to_15_days": "10 to 15 days",
+      "more_than_15_days": "More than 15 days"
+    },
+    "price_range": {
+      "less_than_1000": "Less than 1000 EUR",
+      "1000_to_1500": "1000 to 1500 EUR",
+      "1500_to_2000": "1500 to 2000 EUR",
+      "2000_to_2500": "2000 to 2500 EUR",
+      "more_than_2500": "More than 2500 EUR"
+    }
+  },
+  "recaptcha": {
+    "error": {
+      "title": "Uh oh! Something went wrong.",
+      "description": "Failed to verify reCAPTCHA. Please try again.."
+    }
+  }
+}
