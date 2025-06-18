@@ -1,43 +1,24 @@
-"use server";
-import {
-    CMSBlock,
-} from '@/types';
-import {TFunction} from 'i18next';
+import {PageRendererProps} from "@/components/PageRenderer/types";
 import {RenderOnViewport} from "@/hooks/useLazyLoading";
-import SectionRenderer from "@/components/PageRenderer/SectionRenderer";
-
-export type PageRendererProps = {
-    url?: string;
-    lang: string;
-    blocks: CMSBlock[];
-    queryParameters?: { [key: string]: string | string[] };
-    t: TFunction<string[], string>;
-    localizedSlugs?: { en: string; fr: string; de?: string };
-    filterSlug?: { [key: string]: string };
-};
-
+import {getCmsBlock} from "@/services";
+import BlockRenderer from "@/components/PageRenderer/BlockRenderer";
 
 async function PageRenderer(props: PageRendererProps) {
     const {
-        blocks, url,
-        lang,
-        queryParameters,
-        t,
-        filterSlug,
+        blocks, ...rest
     } = props;
 
-    const renderedBlocks = await Promise.all(
-        blocks.map(async block => {
-            return (
-                <RenderOnViewport key={`${block.__component}-${block.id}`}>
-                    <SectionRenderer block={block} url={url} lang={lang} queryParameters={queryParameters} t={t}
-                                     filterSlug={filterSlug}/>
-                </RenderOnViewport>
-            )
-        }),
-    );
+    const renderedBlocks = blocks.map(async block => {
+        const cmsBlock = await getCmsBlock(block.id, block.__component);
+        return (
+            <RenderOnViewport key={block.key} height={500}>
+                <BlockRenderer block={cmsBlock} {...rest}/>
+            </RenderOnViewport>
+        )
+    });
 
     return renderedBlocks.filter(Boolean);
 }
+
 
 export default PageRenderer;

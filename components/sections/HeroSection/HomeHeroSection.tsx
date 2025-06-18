@@ -6,7 +6,6 @@ import {detectMobileFromHeaders} from '@/lib/mobile-detect';
 import HeroContentClient from './HeroContentClient';
 import HeroHead from './HeroHead';
 import HomeSearchBar from '@/components/HomeSearchBar';
-import Image from 'next/image';
 import {RenderAfterLCP} from '@/hooks/useLazyLoading';
 import React from 'react';
 
@@ -60,6 +59,7 @@ export default async function HomeHeroSection({
                         alt="hero-banner-lqip"
                         width="100%"
                         height="100%"
+                        fetchPriority="high"
                     />
                 </div>
 

@@ -1,13 +1,13 @@
 "use client";
 import dynamic from "next/dynamic";
-import {RenderAfterLCP} from "@/hooks/useLazyLoading";
+import {RenderAfterLCP, RenderOnFirstInteraction} from "@/hooks/useLazyLoading";
 
 const HeaderNavigation = dynamic(() => import("./HeaderNavigation"), {ssr: false})
 
 export default (props: any) => {
   return (
-      <RenderAfterLCP>
+      <RenderOnFirstInteraction>
         <HeaderNavigation {...props} />
-      </RenderAfterLCP>
+      </RenderOnFirstInteraction>
   )
 };

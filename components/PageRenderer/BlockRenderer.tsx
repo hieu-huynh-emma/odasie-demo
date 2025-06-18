@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import {
     AnswerToQuestionSection as AnswerToQuestionSectionType,
     AssociatedBlock as AssociatedBlockType,
@@ -22,16 +23,42 @@ import {
     WhyChooseUsSection
 } from "@/types";
 import {InsuranceSolutionSection} from "@/types/insurance";
-import {PageRendererProps} from "@/components/PageRenderer/index";
+import {PageRendererProps} from "@/components/PageRenderer/types";
 
-export default async function SectionRenderer({
-                                                block,
-                                                url,
-                                                lang,
-                                                queryParameters,
-                                                t,
-                                                filterSlug,
-                                            }: Omit<PageRendererProps, "blocks"> & {block: CMSBlock}) {
+const MobileApplications = dynamic(() => import('@/components/sections/MobileApplications'));
+const FeaturedCountries = dynamic(() => import('@/components/sections/FeaturedCountries'));
+const LatestBlogArticles = dynamic(() => import('@/components/sections/LatestBlogArticles'));
+const FeaturedTours = dynamic(() => import('@/components/sections/FeaturedTours'));
+const FeaturedExperiences = dynamic(() => import('@/components/sections/FeaturedExperiences'));
+const WhyChooseUs = dynamic(() => import('@/components/sections/WhyChooseUs'));
+const PersonalizedItinerarySection = dynamic(() => import('@/components/sections/PersonalizedItineraryForm/PersonalizedItinerarySection'));
+const TeamSection = dynamic(() => import('@/components/sections/TeamSection'));
+const GuaranteesSection = dynamic(() => import('@/components/sections/GuaranteesSection'));
+const TravelWithUsSection = dynamic(() => import('@/components/sections/TravelWithUsSection'));
+const ContactUsSection = dynamic(() => import('@/components/sections/ContactUsSection'));
+const ContentSection = dynamic(() => import('@/components/sections/ContentSection'));
+const FeaturedDiscoveries = dynamic(() => import('@/components/sections/FeaturedDiscoveries'));
+const Insurance = dynamic(() => import('@/components/sections/InsuranceSection'));
+const TalkAboutUsSection = dynamic(() => import('@/components/sections/TalkAboutUsSection'));
+const OdasieAgencyAndPrincipalsSection = dynamic(() => import('@/components/sections/OdasieAgencyAndPrincipalsSection'));
+const OdasieUniverseSection = dynamic(() => import('@/components/sections/OdasieUniverseSection/page'));
+const OdasieUniverseSliderSection = dynamic(() => import('@/components/sections/OdasieUniverseSliderSection'));
+const FeatureBlock = dynamic(() => import('@/components/sections/FeatureBlock'));
+const AssociatedBlock = dynamic(() => import('@/components/sections/AssociatedBlock'));
+const TipBlock = dynamic(() => import('@/components/sections/TipBlock'));
+const AnswerToQuestionSection = dynamic(() => import('@/components/sections/AnswerToQuestionSection'));
+
+
+export default function BlockRenderer({
+                                          block,
+                                          url,
+                                          lang,
+                                          queryParameters,
+                                          filterSlug,
+                                      }: Omit<PageRendererProps, "blocks"> & { block: CMSBlock | undefined }) {
+
+    if (!block) return null
+
     switch (block.__component) {
         case 'section.story-section':
             return null;
@@ -40,9 +67,6 @@ export default async function SectionRenderer({
             return null;
 
         case 'section.mobile-application-section': {
-            const {default: MobileApplications} = await import(
-                '@/components/sections/MobileApplications'
-                );
             return (
                 <MobileApplications
                     key={`${block.__component}-${block.id}`}
@@ -63,15 +87,11 @@ export default async function SectionRenderer({
         //   );
 
         case 'section.destination-section': {
-            const {default: FeaturedCountries} = await import(
-                '@/components/sections/FeaturedCountries'
-                );
             return (
                 <FeaturedCountries
                     key={`${block.__component}-${block.id}`}
                     lang={lang}
                     section={block as CountrySection}
-                    t={t}
                 />
             );
         }
@@ -80,9 +100,6 @@ export default async function SectionRenderer({
             return null;
 
         case 'section.blog-section': {
-            const {default: LatestBlogArticles} = await import(
-                '@/components/sections/LatestBlogArticles'
-                );
             return (
                 <LatestBlogArticles
                     key={`${block.__component}-${block.id}`}
@@ -93,9 +110,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.tour-section': {
-            const {default: FeaturedTours} = await import(
-                '@/components/sections/FeaturedTours'
-                );
             return (
                 <FeaturedTours
                     key={`${block.__component}-${block.id}`}
@@ -107,9 +121,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.experience-section': {
-            const {default: FeaturedExperiences} = await import(
-                '@/components/sections/FeaturedExperiences'
-                );
             return (
                 <FeaturedExperiences
                     key={`${block.__component}-${block.id}`}
@@ -120,9 +131,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.why-choose-us-section': {
-            const {default: WhyChooseUs} = await import(
-                '@/components/sections/WhyChooseUs'
-                );
             return (
                 <WhyChooseUs
                     key={`${block.__component}-${block.id}`}
@@ -133,9 +141,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.itinerary-form-section': {
-            const {default: PersonalizedItinerarySection} = await import(
-                '@/components/sections/PersonalizedItineraryForm/PersonalizedItinerarySection'
-                );
             const section = block as ItineraryFormSection;
             return (
                 <PersonalizedItinerarySection
@@ -149,9 +154,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.odasie-team-members-section': {
-            const {default: TeamSection} = await import(
-                '@/components/sections/TeamSection'
-                );
             return (
                 <TeamSection
                     key={`${block.__component}-${block.id}`}
@@ -162,9 +164,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.guarantees-section': {
-            const {default: GuaranteesSection} = await import(
-                '@/components/sections/GuaranteesSection'
-                );
             return (
                 <GuaranteesSection
                     key={`${block.__component}-${block.id}`}
@@ -175,9 +174,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.ready-to-travel-with-us-section': {
-            const {default: TravelWithUsSection} = await import(
-                '@/components/sections/TravelWithUsSection'
-                );
             return (
                 <TravelWithUsSection
                     key={`${block.__component}-${block.id}`}
@@ -188,23 +184,17 @@ export default async function SectionRenderer({
         }
 
         case 'section.contact-form-section': {
-            const {default: ContactUsSection} = await import(
-                '@/components/sections/ContactUsSection'
-                );
             return (
                 <ContactUsSection
                     key={`${block.__component}-${block.id}`}
                     lang={lang}
                     section={block as ContactUsSectionType}
-                    t={t}
+
                 />
             );
         }
 
         case 'section.content-section': {
-            const {default: ContentSection} = await import(
-                '@/components/sections/ContentSection'
-                );
             return (
                 <ContentSection
                     key={`${block.__component}-${block.id}`}
@@ -214,23 +204,17 @@ export default async function SectionRenderer({
         }
 
         case 'section.discovery-section': {
-            const {default: FeaturedDiscoveries} = await import(
-                '@/components/sections/FeaturedDiscoveries'
-                );
             return (
                 <FeaturedDiscoveries
                     key={`${block.__component}-${block.id}`}
                     lang={lang}
                     section={block as DiscoverySection}
-                    t={t}
+
                 />
             );
         }
 
         case 'section.insurance-solution-section': {
-            const {default: Insurance} = await import(
-                '@/components/sections/InsuranceSection'
-                );
             return (
                 <Insurance
                     key={`${block.__component}-${block.id}`}
@@ -241,9 +225,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.they-talk-about-odasie-section': {
-            const {default: TalkAboutUsSection} = await import(
-                '@/components/sections/TalkAboutUsSection'
-                );
             return (
                 <TalkAboutUsSection
                     key={`${block.__component}-${block.id}`}
@@ -254,23 +235,17 @@ export default async function SectionRenderer({
         }
 
         case 'section.odasie-agency-and-principals-section': {
-            const {default: OdasieAgencyAndPrincipalsSection} = await import(
-                '@/components/sections/OdasieAgencyAndPrincipalsSection'
-                );
             return (
                 <OdasieAgencyAndPrincipalsSection
                     key={`${block.__component}-${block.id}`}
                     lang={lang}
                     section={block as OdasieAgencyAndPrincipalsSectionType}
-                    t={t}
+
                 />
             );
         }
 
         case 'section.odasie-universe-section': {
-            const {default: OdasieUniverseSection} = await import(
-                '@/components/sections/OdasieUniverseSection/page'
-                );
             return (
                 <OdasieUniverseSection
                     key={`${block.__component}-${block.id}`}
@@ -281,9 +256,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.odasie-universe-slider-section': {
-            const {default: OdasieUniverseSliderSection} = await import(
-                '@/components/sections/OdasieUniverseSliderSection'
-                );
             const sliderSection = block as OdasieUniverseSliderSectionType;
             return (
                 <OdasieUniverseSliderSection
@@ -295,9 +267,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.feature-block-section': {
-            const {default: FeatureBlock} = await import(
-                '@/components/sections/FeatureBlock'
-                );
             return (
                 <FeatureBlock
                     key={`${block.__component}-${block.id}`}
@@ -307,9 +276,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.associated-block-section': {
-            const {default: AssociatedBlock} = await import(
-                '@/components/sections/AssociatedBlock'
-                );
             return (
                 <AssociatedBlock
                     key={`${block.__component}-${block.id}`}
@@ -319,9 +285,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.tip-block-section': {
-            const {default: TipBlock} = await import(
-                '@/components/sections/TipBlock'
-                );
             return (
                 <TipBlock
                     key={`${block.__component}-${block.id}`}
@@ -331,9 +294,6 @@ export default async function SectionRenderer({
         }
 
         case 'section.answer-to-question-section': {
-            const {default: AnswerToQuestionSection} = await import(
-                '@/components/sections/AnswerToQuestionSection'
-                );
             return (
                 <AnswerToQuestionSection
                     key={`${block.__component}-${block.id}`}
@@ -346,3 +306,4 @@ export default async function SectionRenderer({
             return null;
     }
 }
+

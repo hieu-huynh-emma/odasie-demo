@@ -11,7 +11,6 @@ import { TFunction } from 'i18next';
 type FeaturedCountriesProps = {
   lang: string;
   section: CountrySection;
-  t: TFunction<string[], string>;
 };
 
 function FeaturedCountries({ section, t }: FeaturedCountriesProps) {
@@ -46,7 +45,7 @@ function FeaturedCountries({ section, t }: FeaturedCountriesProps) {
         <div className="flex flex-col gap-6 lg:flex-row">
           <div className="h-full w-full lg:w-1/2">
             {section.promotedTour && (
-              <TourCard variant="hero" tour={section.promotedTour} t={t} />
+              <TourCard variant="hero" tour={section.promotedTour}/>
             )}
           </div>
           <div className="relative hidden h-100 w-full flex-col items-center justify-center lg:flex lg:w-1/2">

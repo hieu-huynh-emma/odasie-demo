@@ -36,7 +36,7 @@ type CoreValuesProps = {
 function CoreValues({ values }: CoreValuesProps) {
   return (
     <div className="grid grid-cols-1 items-center gap-7 md:grid-cols-2 lg:grid-cols-4">
-      {values.map((value, index) => (
+      {values?.map((value, index) => (
         <CoreValueItem key={index} value={value} primary={index % 2 === 1} />
       ))}
     </div>

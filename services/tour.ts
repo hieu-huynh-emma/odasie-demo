@@ -1,3 +1,4 @@
+"use server";
 import qs from 'qs';
 
 import { appConfig } from '@/configs';

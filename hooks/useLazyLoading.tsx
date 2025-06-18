@@ -113,12 +113,12 @@ export function useOnFirstInteraction() {
     return detected;
 }
 
-export const RenderOnViewport = ({children}) => {
+export const RenderOnViewport = ({children, height = 200}) => {
     const ref = useRef<HTMLDivElement | null>(null);
     const entry = useIntersectionObserver(ref, {});
     const loaded = Boolean(entry?.isIntersecting);
 
-    return loaded ? <>{children}</> : <RenderOnViewportPlaceholder ref={ref} />;
+    return loaded ? <>{children}</> : <RenderOnViewportPlaceholder ref={ref} height={height} />;
 };
 
 export const RenderAfterLCP = ({children}) => {

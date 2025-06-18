@@ -24,7 +24,7 @@ export default function TalkAboutUsSection({
         </div>
       )}
       <Marquee gradient autoFill className="mx-auto h-[96px] max-w-[1200px]">
-        {section?.marqueeSlides.map(slide => {
+        {section?.marqueeSlides?.map(slide => {
           if (!slide.image?.url) return null;
           return (
             <img
@@ -51,7 +51,7 @@ export default function TalkAboutUsSection({
               />
             </div>
           )}
-          {section?.cards.map(card => {
+          {section?.cards?.map(card => {
             return (
               <div
                 key={`card-${card.id}`}
