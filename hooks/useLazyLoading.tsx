@@ -1,106 +1,135 @@
 'use client';
 import React, {
-  ReactElement,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
+    RefObject,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
+import RenderOnViewportPlaceholder from "@/components/LazyLoad/RenderOnViewportPlaceholder";
+import useDebounce from "@/hooks/useDebounce";
 
 interface Args extends IntersectionObserverInit {
-  freezeOnceVisible?: boolean;
+    freezeOnceVisible?: boolean;
 }
 
 function useIntersectionObserver(
-  elementRef: RefObject<Element>,
-  {
-    threshold = 0,
-    root = null,
-    rootMargin = '0%',
-    freezeOnceVisible = false,
-  }: Args,
+    elementRef: RefObject<Element>,
+    {
+        threshold = 0.2,
+        root = null,
+        rootMargin = '0%',
+        freezeOnceVisible = false,
+    }: Args,
 ): IntersectionObserverEntry | undefined {
-  const [entry, setEntry] = useState<IntersectionObserverEntry>();
+    const [entry, setEntry] = useState<IntersectionObserverEntry>();
 
-  const frozen = entry?.isIntersecting && freezeOnceVisible;
+    const frozen = entry?.isIntersecting && freezeOnceVisible;
 
-  const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
-    setEntry(entry);
-  };
+    const updateEntry = (entries: IntersectionObserverEntry[]): void => {
+        const lastEntry = entries.pop()
+        if(!lastEntry?.rootBounds) return
 
-  const stableThreshold = Array.isArray(threshold)
-    ? threshold.join(';')
-    : threshold;
+        setTimeout(() => {
+            setEntry(lastEntry);
+        }, 100)
+    };
 
-  useEffect(() => {
-    const node = elementRef?.current;
-    const hasIOSupport = !!window.IntersectionObserver;
+    const stableThreshold = Array.isArray(threshold)
+        ? threshold.join(';')
+        : threshold;
 
-    if (!hasIOSupport || frozen || !node) return;
+    useEffect(() => {
+        const node = elementRef?.current;
+        const hasIOSupport = !!window.IntersectionObserver;
 
-    const inputThreshold =
-      typeof stableThreshold === 'string'
-        ? stableThreshold.split(';').map(Number)
-        : stableThreshold;
+        if (!hasIOSupport || frozen || !node) return;
 
-    const observerParams = { threshold: inputThreshold, root, rootMargin };
-    const observer = new IntersectionObserver(updateEntry, observerParams);
+        const inputThreshold =
+            typeof stableThreshold === 'string'
+                ? stableThreshold.split(';').map(Number)
+                : stableThreshold;
 
-    observer.observe(node);
+        const observerParams = {threshold: inputThreshold, root, rootMargin};
+        const observer = new IntersectionObserver(updateEntry, observerParams);
 
-    return () => observer.disconnect();
-  }, [elementRef, stableThreshold, root, rootMargin, frozen]);
+        observer.observe(node);
 
-  return entry;
+        return () => observer.disconnect();
+    }, [elementRef]);
+
+    return entry;
 }
 
-function useLCPObserver(): PerformanceEntry | undefined {
-  const [entry, setEntry] = useState<PerformanceEntry>();
+function useLCPObserver() {
+    const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    const observer = new PerformanceObserver(list => {
-      setEntry(list.getEntries().pop());
-    });
+    useEffect(() => {
+        const observer = new PerformanceObserver(list => {
+            setTimeout(() => {
+                const lastEntry =list.getEntries().pop()
 
-    observer.observe({
-      entryTypes: [
-        // 'navigation',
-        'largest-contentful-paint',
-        // 'resource',
-        // 'mark',
-        // 'measure',
-        // 'frame',
-        // 'longtask'
-      ],
-    });
-    return () => observer.disconnect();
-  }, []);
+                setIsLoaded(Boolean(lastEntry?.entryType === 'largest-contentful-paint'));
+            }, 100)
+        });
 
-  return entry;
+        observer.observe({
+            entryTypes: [
+                // 'navigation',
+                'largest-contentful-paint',
+                // 'resource',
+                // 'mark',
+                // 'measure',
+                // 'frame',
+                // 'longtask'
+            ],
+        });
+        return () => observer.disconnect();
+    }, []);
+
+    return isLoaded;
 }
 
-export const RenderWithWindowIntersection = ({
-  children,
-}: {
-  children: ({ loaded }: { loaded: boolean }) => ReactElement;
-}) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const entry = useIntersectionObserver(ref, {});
-  const loaded = Boolean(entry?.isIntersecting);
+export function useOnFirstInteraction() {
+    const [detected, setDetected] = useState(false);
 
-  return (
-    <div ref={ref}>
-      <>{children({ loaded })}</>
-    </div>
-  );
+    useEffect(() => {
+        if (detected) return;
+        const listener = (): void => {
+            setDetected(true);
+        };
+        window.addEventListener(`mousemove`, listener);
+        window.addEventListener(`touchstart`, listener);
+        window.addEventListener(`scroll`, listener);
+        window.addEventListener(`click`, listener);
+
+        return () => {
+            window.removeEventListener(`touchstart`, listener);
+            window.removeEventListener(`mousemove`, listener);
+            window.removeEventListener(`scroll`, listener);
+            window.removeEventListener(`click`, listener);
+        };
+    }, [detected]);
+
+    return detected;
+}
+
+export const RenderOnViewport = ({children}) => {
+    const ref = useRef<HTMLDivElement | null>(null);
+    const entry = useIntersectionObserver(ref, {});
+    const loaded = Boolean(entry?.isIntersecting);
+
+    return loaded ? <>{children}</> : <RenderOnViewportPlaceholder ref={ref} />;
 };
-export const RenderAfterLCP = ({ children }) => {
-  const entry = useLCPObserver();
-  const loaded = Boolean(entry?.entryType === 'largest-contentful-paint');
 
-  return <>{loaded ? children : null}</>;
+export const RenderAfterLCP = ({children}) => {
+    const loaded = useLCPObserver();
+
+    return <>{loaded ? children : null}</>;
 };
 
-// <RenderWithWindowIntersection>
+export const RenderOnFirstInteraction = ({children}) => {
+    const loaded = useOnFirstInteraction();
 
-// </RenderWithWindowIntersection>
+    return <>{loaded ? children : null}</>;
+};
+

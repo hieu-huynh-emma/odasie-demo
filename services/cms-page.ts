@@ -16,12 +16,13 @@ export async function getCmsPage(
     }
 
     const body = await res.json();
+    console.log("%c 2 --> Line: 19||cms-page.ts\n body: ","color:#0f0;", body);
 
     body.data.heroBlock = body.data.blocks.shift()
     body.data.blocks = body.data.blocks.map(
       (block: CMSBlock) => ({
         id: block.id,
-        key: block.__component,
+        __component: block.__component,
       }));
 
     return body;

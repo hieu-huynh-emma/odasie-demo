@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import { RenderAfterLCP } from '@/hooks/useLazyLoading';
+import {RenderAfterLCP, RenderOnFirstInteraction} from '@/hooks/useLazyLoading';
 
 const VideoMedia = dynamic(() => import('./VideoMedia'), {
   ssr: false,
@@ -24,7 +24,7 @@ export default function HeroContentClient({
   isMobile,
 }: HeroContentClientProps) {
   return (
-    <RenderAfterLCP>
+    <RenderOnFirstInteraction>
       {/* Progressive video */}
       {shouldShowVideo && videoSrc && videoPoster && (
         <Suspense fallback={null}>
@@ -37,6 +37,6 @@ export default function HeroContentClient({
           </div>
         </Suspense>
       )}
-    </RenderAfterLCP>
+    </RenderOnFirstInteraction>
   );
 }
