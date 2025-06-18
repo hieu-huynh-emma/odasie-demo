@@ -134,11 +134,11 @@ export default function DesktopNavigation({
             label={settings.contactInfo.phone}
           />
           <div>
-            <img
-              className="h-full w-[65px]"
-              src="/images/travelers-choice.avif"
-              alt="Travelers Choice"
-            />
+            {/*<img*/}
+            {/*  className="h-full w-[65px]"*/}
+            {/*  src="/images/travelers-choice.avif"*/}
+            {/*  alt="Travelers Choice"*/}
+            {/*/>*/}
           </div>
           <NavigationChip
             lang={lang}

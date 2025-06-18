@@ -1,4 +1,4 @@
-import HeroSection from '@/components/sections/HeroSection';
+// import HeroSection from '@/components/sections/HeroSection';
 import {
   BlogSection,
   CountrySection,
@@ -67,15 +67,15 @@ async function PageRenderer({
           );
         }
 
-        case 'section.hero-section':
-          return (
-            <HeroSection
-              key={`${block.__component}-${block.id}`}
-              lang={lang}
-              url={url}
-              section={block as HeroSectionType}
-            />
-          );
+        // case 'section.hero-section':
+        //   return (
+        //     <HeroSection
+        //       key={`${block.__component}-${block.id}`}
+        //       lang={lang}
+        //       url={url}
+        //       section={block as HeroSectionType}
+        //     />
+        //   );
 
         case 'section.destination-section': {
           const { default: FeaturedCountries } = await import(

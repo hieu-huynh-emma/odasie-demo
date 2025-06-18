@@ -10,12 +10,16 @@ function PageLoading() {
 
   useEffect(() => {
     setLoading(true);
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 500);
+    // const timeout = setTimeout(() => {
+    //   setLoading(false);
+    // }, 500);
 
-    return () => clearTimeout(timeout);
+    // return () => clearTimeout(timeout);
+
+    window.addEventListener('load', () => setLoading(false));
+
   }, [pathname]); // Trigger the effect on route change
+
 
   return (
     <div>

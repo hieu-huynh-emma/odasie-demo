@@ -1,7 +1,7 @@
 import Container from '@/components/Container';
 import HeroSection from '@/components/sections/HeroSection';
 import { HeroSection as HeroSectionType } from '@/types';
-import { ChevronLeft } from 'lucide-react';
+// import { ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export default async function NotFound() {
@@ -23,7 +23,7 @@ export default async function NotFound() {
           <Link
             href="/"
             className="typo-md-semibold inline-flex items-center gap-2 text-white">
-            <ChevronLeft className="h-5 w-5" />
+            {/*<ChevronLeft className="h-5 w-5" />*/}
             <span>Back to Home</span>
           </Link>
         </div>

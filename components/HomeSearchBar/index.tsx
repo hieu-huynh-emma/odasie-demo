@@ -37,9 +37,9 @@ export default function HomeSearchBar({ lang }: { lang: string }) {
         description: t('destination.description'),
         className: 'border-2 border-yellow-200 bg-yellow-500 text-black',
       });
-      setTimeout(() => {
-        dismiss(toastId);
-      }, 60000);
+      // setTimeout(() => {
+      //   dismiss(toastId);
+      // }, 60000);
       return;
     }
     setRedirecting(true);
@@ -116,13 +116,7 @@ export default function HomeSearchBar({ lang }: { lang: string }) {
             className="flex h-14 w-full items-center justify-center rounded-full">
             {redirecting ? (
               <Spinner className="size-6 text-white" />
-            ) : (
-              <img
-                src="/images/icons/search.svg"
-                alt="search"
-                className="size-6"
-              />
-            )}
+            ) : null}
           </Button>
         </div>
       </div>

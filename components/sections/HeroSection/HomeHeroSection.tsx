@@ -6,6 +6,9 @@ import { detectMobileFromHeaders } from '@/lib/mobile-detect';
 import HeroContentClient from './HeroContentClient';
 import HeroHead from './HeroHead';
 import HomeSearchBar from '@/components/HomeSearchBar';
+import Image from 'next/image';
+import { RenderAfterLCP } from '@/hooks/useLazyLoading';
+import React from 'react';
 
 type HomeHeroSectionProps = React.PropsWithChildren<{
   url?: string;
@@ -31,6 +34,7 @@ export default async function HomeHeroSection({
   containerClassName = 'max-w-screen-lg',
   scrollElement,
 }: HomeHeroSectionProps) {
+
   const isMobile = await detectMobileFromHeaders();
   const isHomePage = url === '/';
 
@@ -50,13 +54,12 @@ export default async function HomeHeroSection({
     <>
       <HeroHead imageUrl={imageUrl} />
       <div className={heroContainerClass}>
-        <div
+        <Image
+          src={imageUrl}
+          alt="ds"
+          width={100}
+          height={100}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
         />
 
         {/* Gradient */}
@@ -79,7 +82,12 @@ export default async function HomeHeroSection({
               lang={lang}
               isMobile={isMobile}
             />
-            {url === '/' && <HomeSearchBar lang={lang} />}
+
+            <RenderAfterLCP>
+              {url === '/' ? <HomeSearchBar lang={lang} /> : null}
+            </RenderAfterLCP>
+
+
           </Container>
           {children}
         </div>

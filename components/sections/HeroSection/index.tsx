@@ -1,6 +1,7 @@
 import { HeroSection as HeroSectionType } from '@/types';
 import AboutUsHeroSection from './AboutUsHeroSection';
 import HomeHeroSection from './HomeHeroSection';
+import { useLazyLoading } from '@/hooks/useLazyLoading';
 
 type HeroSectionProps = React.PropsWithChildren<{
   url?: string;
@@ -26,6 +27,7 @@ function HeroSection({
   containerClassName,
   scrollElement,
 }: HeroSectionProps) {
+
   switch (url) {
     case '/about':
       return <AboutUsHeroSection lang={lang} section={section} />;

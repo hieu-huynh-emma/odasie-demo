@@ -1,21 +1,30 @@
 import { appConfig } from '@/configs';
-import { APIResponse, CMSPage } from '@/types';
+import { APIResponse, CMSBlock, CMSPage } from '@/types';
 
 export async function getCmsPage(
   page: string,
   lang: string,
 ): Promise<APIResponse<CMSPage | null>> {
-
   try {
     const res = await fetch(
       `${appConfig.apiUrl}/api/pages-cms/match-by-url?url=${page}&locale=${lang}`,
+      { cache: 'force-cache' },
     );
 
     if (!res.ok) {
       throw new Error('Failed to fetch cms page');
     }
 
-    return res.json();
+    const body = await res.json();
+
+    body.data.heroBlock = body.data.blocks.shift()
+    body.data.blocks = body.data.blocks.map(
+      (block: CMSBlock) => ({
+        id: block.id,
+        key: block.__component,
+      }));
+
+    return body;
   } catch (e: any) {
     return {
       data: null,

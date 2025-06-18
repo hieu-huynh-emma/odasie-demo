@@ -74,14 +74,14 @@ export default function MobileNavigation({
   const toggleDropdown = (open: boolean) => {
     if (open) {
       document.body.classList.add('scrollbar-hide');
-      setTimeout(() => {
-        setOpenDropdown(true);
-      }, 10);
+      // setTimeout(() => {
+      //   setOpenDropdown(true);
+      // }, 10);
     } else {
       setOpenDropdown(false);
-      setTimeout(() => {
-        document.body.classList.remove('scrollbar-hide');
-      }, 300); // Match this with animation duration
+      // setTimeout(() => {
+      //   document.body.classList.remove('scrollbar-hide');
+      // }, 300); // Match this with animation duration
     }
   };
 
