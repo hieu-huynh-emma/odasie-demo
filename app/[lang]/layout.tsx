@@ -12,7 +12,7 @@ import FooterConnector from "@/components/Footer";
 import {RenderOnFirstInteraction} from "@/hooks/useLazyLoading";
 import TrackersProvider from "@/components/Trackers";
 import {Toaster} from "@/components/ui/toaster";
-import dynamic from 'next/dynamic';
+import { GoogleAnalytics } from '@next/third-parties/google';
 // import Favicon from '@/app/Favicon';
 
 // Generate image domains from environment variable
@@ -79,7 +79,7 @@ async function getLayoutData(lang: string) {
     }
 }
 
-const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then(mod => mod.GoogleAnalytics), {ssr: false});
+// const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then(mod => mod.GoogleAnalytics));
 
 
 export default async function RootLayout({
