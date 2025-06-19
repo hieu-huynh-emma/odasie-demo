@@ -2,7 +2,6 @@
 import {appConfig} from "@/configs";
 import dynamic from "next/dynamic";
 
-const GoogleAnalytics = dynamic(() => import('@next/third-parties/google').then(mod => mod.GoogleAnalytics), {ssr: false});
 const GoogleTagManager = dynamic(() => import('@next/third-parties/google').then(mod => mod.GoogleTagManager), {ssr: false});
 
 const DataLayerBootstrap = dynamic(() => import("@/components/DataLayerBootstrap").then(mod => mod.DataLayerBootstrap), {ssr: false});
@@ -36,9 +35,6 @@ export default function TrackersProvider({globalSettings, lang}: any) {
             {/*</Suspense>*/}
 
             {/*Load analytics scripts with proper defer/async for better performance*/}
-            {appConfig.gaId && (
-                <GoogleAnalytics gaId={appConfig.gaId} dataLayerName="dataLayer"/>
-            )}
 
             {appConfig.gtmId && (
                 <GoogleTagManager
