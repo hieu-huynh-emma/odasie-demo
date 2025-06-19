@@ -138,6 +138,7 @@ export default async function RootLayout({
 
         <body suppressHydrationWarning>
         {/*<PageLoading />*/}
+        <p>Test</p>
         <LocalizedProvider>
             <I18nProvider lang={lang}>
                 <HeaderNavigationConnector
